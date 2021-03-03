@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="src/clases.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="src/scripts.js"></script>
         <title>Menu de Admin. de Acad.</title>
     </head>

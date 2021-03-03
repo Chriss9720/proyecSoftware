@@ -6,11 +6,11 @@ function realizarValidaciones(mat, nombre, app, apm, correo, cip) {
         contieneNumeros(nombre, 'errorNombre', 'labelErrorNombre', 0);
     if (app.length > 0)
         contieneNumeros(app, 'errorApellidoP', 'labelErrorApellidoP', 2);
-    if (apm.length > 0) 
+    if (apm.length > 0)
         contieneNumeros(apm, 'errorApellidoM', 'labelErrorApellidoM', 3);
     if (correo.length > 0)
         validarCorreo(correo, 'errorCorreo', 'labelErrorCorreo');
-    if (cip.length > 0) 
+    if (cip.length > 0)
         validarCIP(cip, 'errorCIP', 'labelErrorIP');
     ajustarTamaño('contenedor');
 }
@@ -68,7 +68,6 @@ function validarCIP(cip, id, label) {
     ajustarTamaño('contenedor');
 }
 function validarSelect(select, id, label, pos) {
-    console.log(select);
     document.getElementById(id).hidden = !(select === "0");
     document.getElementById(label).innerHTML = "Elija 1";
     if (extraH[pos] === 0 && !(document.getElementById(id).hidden)) {
@@ -152,8 +151,17 @@ function validarRegistro() {
             msj += "\nElija un puesto";
         }
         if (msj.length === 0) {
-            document.getElementById("flag").value = "1";
-           alert("Registro exitoso!!");
+            if (document.getElementById("fotoPerfil").src.toString().includes("src/perfilazul.png")) {
+                if (confirm("Desea guardar sin foto?")) {
+                    document.getElementById("flag").value = "1";
+                    alert("Registro exitoso!!");
+                } else {
+                    document.getElementById("flag").value = "0";
+                }
+            } else {
+                document.getElementById("flag").value = "1";
+                alert("Registro exitoso!!");
+            }
         } else {
             document.getElementById("flag").value = "0";
             alert(msj);
@@ -175,14 +183,33 @@ function eliminar(valor) {
     }
 }
 function verPDF(nombre) {
-    window.open("PDF.jsp?nombre="+nombre);
+    window.open("PDF.jsp?nombre=" + nombre);
 }
 function cerrarSesion(error) {
-    if (error.length > 0) 
+    if (error.length > 0)
         alert(error);
 }
 function logout(path) {
     if (confirm("Seguro de que desea cerrar su sesión?")) {
         location.href = path;
     }
+}
+function subirImg(path) {
+    path = document.getElementById(path).value;
+    if (path.length === 0) {
+        document.getElementById("flagFoto").value = "-1";
+        alert("Por favor, seleccione una imagen");
+    } else {
+        document.getElementById("flagFoto").value = "0";
+        crearLoad();
+    }
+}
+function crearLoad() {
+    console.log("a ver");
+    var div = document.createElement("DIV");
+    div.setAttribute("class", "loading show rcorners1");
+    var s = document.createElement("DIV");
+    s.setAttribute("class", "spin");
+    div.appendChild(s);
+    document.body.appendChild(div);
 }

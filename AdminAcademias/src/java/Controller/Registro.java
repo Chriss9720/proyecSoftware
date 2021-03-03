@@ -34,10 +34,10 @@ public class Registro extends HttpServlet {
         if (user == null) {
             user = new User();
         }
-        if (ServletFileUpload.isMultipartContent(request)) {
-            Part ParteDelArchivo = request.getPart("upfile");
+        if (ServletFileUpload.isMultipartContent(request) &&
+                toString(request.getParameter("pasoFoto")).equals("0")) {
             try {
-                espera(1000);
+                Part ParteDelArchivo = request.getPart("upfile");
                 ServletContext sc = this.getServletContext();
                 String path = sc.getRealPath("/src/Hector.png");
                 path = path.replace("\\", "/").replace("/build", "");
@@ -50,7 +50,7 @@ public class Registro extends HttpServlet {
                 while ((bytesLeidos = fileContent.read(chunk)) > 0) {
                     os.write(chunk, 0, bytesLeidos);
                 }
-                espera(1000);
+                espera(5000);
                 user.setFile(path);
             } catch (IOException e) {
                 System.out.println(e);
@@ -61,21 +61,19 @@ public class Registro extends HttpServlet {
         }
         switch (toString(request.getParameter("paso"))) {
             case "0":
-                String mat = toString(request.getParameter("matricula"));
-                request.setAttribute("matricula", mat);
-                String nombre = toString(request.getParameter("nombres"));
-                request.setAttribute("nombres", nombre);
-                String aPP = toString(request.getParameter("apellidoP"));
-                request.setAttribute("apellidoP", aPP);
-                String aPM = toString(request.getParameter("apellidoM"));
-                request.setAttribute("apellidoM", aPM);
-                String correo = toString(request.getParameter("correo"));
-                request.setAttribute("correo", correo);
-                String cip = toString(request.getParameter("cip"));
-                request.setAttribute("cip", cip);
+                user.setMat(toString(request.getParameter("matricula")));
+                user.setNombre(toString(request.getParameter("nombres")));
+                user.setApellidoP(toString(request.getParameter("apellidoP")));
+                user.setApelleidoM(toString(request.getParameter("apellidoM")));
+                user.setCorreo( toString(request.getParameter("correo")));
+                user.setCip(toString(request.getParameter("cip")));
+                user.setCarrera(toString(request.getParameter("carrera")));
+                user.setAcademia(toString(request.getParameter("aca")));
+                user.setPuesto(toString(request.getParameter("puesto")));
                 mantener(request,response);
                 break;
             case "1":
+                user = new User();
                 mantener(request,response);
                 break;
             default:

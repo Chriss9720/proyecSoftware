@@ -6,6 +6,7 @@ package Model;
  */
 public class User {
     
+    private String mat;
     private String file;
     private String nombre;
     private String apellidoP;
@@ -16,8 +17,9 @@ public class User {
     private String academia;
     private String puesto;
 
-    public User(String file, String nombre, String apellidoP, String apelleidoM, 
+    public User(String mat, String file, String nombre, String apellidoP, String apelleidoM, 
             String correo, String cip, String carrera, String academia, String puesto) {
+        this.mat = mat;
         this.file = file;
         this.nombre = nombre;
         this.apellidoP = apellidoP;
@@ -30,6 +32,14 @@ public class User {
     }
     
     public User() {}
+
+    public String getMat() {
+        return mat;
+    }
+
+    public void setMat(String mat) {
+        this.mat = mat;
+    }
 
     public String getFile() {
         return file;
@@ -101,6 +111,20 @@ public class User {
 
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+    
+    @Override
+    public String toString() {
+        return "matricula: " + this.mat
+                +"\nfoto: " + this.file
+                +"\nnombre: " + this.nombre
+                +"\napellidoP: " + this.apellidoP
+                +"\napellidoM: " + this.apelleidoM
+                +"\nacademia: " + this.academia
+                +"\ncarrera: " + this.carrera
+                +"\ncip: " + this.cip
+                +"\ncorreo: " + this.correo
+                +"\npuesto: " + this.puesto;
     }
     
 }

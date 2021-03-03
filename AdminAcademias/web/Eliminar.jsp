@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <link rel="stylesheet" href="src/clases.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="src/scripts.js"></script>
         <title>Administraci&oacute;n de Academias</title>
     </head>

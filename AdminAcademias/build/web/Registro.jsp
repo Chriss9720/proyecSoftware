@@ -19,8 +19,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
         <link rel="stylesheet" href="src/clases.css" />
-        <script type="text/javascript" src="src/scripts.js"></script>
-        <title>Administraci&oacute;n de Academias</title>
+        <link rel="stylesheet" href="src/load.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script type="text/javascript" src="src/scripts.js"></script>
+            <title>Administraci&oacute;n de Academias</title>
     </head>
     <%
         String path;
@@ -30,37 +32,34 @@
             if (user != null && user.getFile() != null && !user.getFile().isEmpty()) {
                 path = user.getFile().replace("/", "\\");
             } else {
-                path = "src\\perfilazul.png";
+                path = "src/perfilazul.png";
             }
         } catch (Exception e) {
-            path = "src\\perfilazul.png";
+            path = "src/perfilazul.png";
         }
         int p = 0;
         for (int i = 0; i < path.length(); i++) {
-            if (path.charAt(i) == '\\') {
+            if (path.charAt(i) == '\\' || path.charAt(i) == '/') {
                 p = i;
             }
         }
-        path = "src/" + path.substring(p, path.length());
-        String mat = (request.getAttribute("matricula") != null)
-                ? (String) request.getAttribute("matricula") : "";
-        String nombre = (request.getAttribute("nombres") != null)
-                ? (String) request.getAttribute("nombres") : "";
-        String app = (request.getAttribute("apellidoP") != null)
-                ? (String) request.getAttribute("apellidoP") : "";
-        String apm = (request.getAttribute("apellidoM") != null)
-                ? (String) request.getAttribute("apellidoM") : "";
-        String correo = (request.getAttribute("correo") != null)
-                ? (String) request.getAttribute("correo") : "";
-        String cip = (request.getAttribute("cip") != null)
-                ? (String) request.getAttribute("cip") : "";
+        path = "src/" + path.substring((p + 1), path.length());
+        String mat = (user.getMat() != null) ? user.getMat() : "";
+        String nombre = (user.getNombre() != null) ? user.getNombre() : "";
+        String app = (user.getApellidoP() != null) ? user.getApellidoP() : "";
+        String apm = (user.getApelleidoM() != null) ? user.getApelleidoM() : "";
+        String correo = (user.getCorreo() != null) ? user.getCorreo() : "";
+        String cip = (user.getCip() != null) ? user.getCip() : "";
+        String carrera = (user.getCarrera() != null) ? user.getCarrera() : "";
+        String academia = (user.getAcademia() != null) ? user.getAcademia() : "";
+        String puesto = (user.getPuesto() != null) ? user.getPuesto() : "";
     %>
     <body onload="realizarValidaciones('<%=mat%>', '<%=nombre%>',
                     '<%=app%>', '<%=apm%>', '<%=correo%>', '<%=cip%>')">
         <div class="rcorners1" id="contenedor">
             <p1 class="subtitle font">Ingrese la informaci&oacute;n:</p1>
-            <img onclick="logout('<%= request.getContextPath() %>')" id="CerrarSesion" class="imgLogout" title="Salir" src="src/BotonSalir.png" alt="not found"/>
-            <form class="font" action="Registro" method="post">
+            <img onclick="logout('<%= request.getContextPath()%>')" id="CerrarSesion" class="imgLogout" title="Salir" src="src/BotonSalir.png" alt="not found"/>
+            <form class="font" action="Registro" method="post" enctype="multipart/form-data" >
                 <input name="paso" id="flag" hidden="true"/>
                 <img id="fotoPerfil" class="imgRedonda" src="<%= path%>" alt="not found" />
                 <table id="tablaCont" cellspacing="3" cellpadding="3" class="cuerpo">
@@ -157,14 +156,26 @@
                         <td>
                             <select name="carrera" class="contenido" id="SelectCarrera"
                                     onclick="validarSelect(this.value, 'errorSelectCarrera', 'labelErrorSelectCarrera', 6)">
+                                <%
+                                    if (carrera.equals("0") || carrera.length() == 0) {
+                                %>
                                 <option value="0">Selecione una</option>
                                 <%
+                                } else {
+                                %>
+                                <option value="<%= carrera%>"><%= carrera%></option>
+                                <%
+                                    }
                                     LinkedList<String> carr = GestorBD.getCarreras();
                                     carr = (carr != null) ? carr : new LinkedList();
                                     for (int i = 0; i < carr.size(); i++) {
+                                        if (carrera.isEmpty()
+                                                || (!carrera.isEmpty()
+                                                && !carrera.equals(carr.get(i)))) {
                                 %>
                                 <option value="<%= carr.get(i)%>"><%= carr.get(i)%></option>
                                 <%
+                                        }
                                     }
                                 %>
                             </select>
@@ -179,9 +190,30 @@
                     <tr>
                         <td><label class="contenido">Academia:</label></td>
                         <td>
-                            <select id="academia" class="contenido"
+                            <select id="academia" class="contenido" name="aca"
                                     onclick="validarSelect(this.value, 'errorSelectAcademia', 'labelErrorAcademia', 7)">
+                                <%
+                                    if (academia.equals("0") || academia.length() == 0) {
+                                %>
                                 <option value="0">Selecione una</option>
+                                <%
+                                } else {
+                                %>
+                                <option value="<%= academia%>"><%= academia%></option>
+                                <%
+                                    }
+                                    LinkedList<String> acad = GestorBD.getCarreras();
+                                    acad = (acad != null) ? acad : new LinkedList();
+                                    for (int i = 0; i < acad.size(); i++) {
+                                        if (academia.isEmpty()
+                                                || (!academia.isEmpty()
+                                                && !academia.equals(acad.get(i)))) {
+                                %>
+                                <option value="<%= acad.get(i)%>"><%= acad.get(i)%></option>
+                                <%
+                                        }
+                                    }
+                                %>
                             </select>
                         </td>
                     </tr>
@@ -194,9 +226,30 @@
                     <tr>
                         <td><label class="contenido">Puesto en la academia:</label></td>
                         <td>
-                            <select id="puessto" class="contenido"
+                            <select id="puessto" class="contenido" name="puesto"
                                     onclick="validarSelect(this.value, 'errorSelectPuesto', 'labelErrorPuesto', 8)">
+                                <%
+                                    if (puesto.equals("0") || puesto.length() == 0) {
+                                %>
                                 <option value="0">Selecione una</option>
+                                <%
+                                } else {
+                                %>
+                                <option value="<%= puesto%>"><%= puesto%></option>
+                                <%
+                                    }
+                                    LinkedList<String> puestos = GestorBD.getCarreras();
+                                    puestos = (puestos != null) ? puestos : new LinkedList();
+                                    for (int i = 0; i < puestos.size(); i++) {
+                                        if (puesto.isEmpty()
+                                                || (!puesto.isEmpty()
+                                                && !puesto.equals(puestos.get(i)))) {
+                                %>
+                                <option value="<%= puestos.get(i)%>"><%= puestos.get(i)%></option>
+                                <%
+                                        }
+                                    }
+                                %>
                             </select>
                         </td>
                     </tr>
@@ -210,14 +263,14 @@
                 <input class="button button1" type="button" value="Cancelar" onclick="cancelarRegistro()" />
                 <input class="button button2" type="submit" value="Registrar" onclick="validarRegistro()" />
             </form>
-            <form method="post" enctype="multipart/form-data" action="Registro">
-                <input class="file" type="file" name="upfile" size="50" />
-                <input class="button subirImg" type="submit" value="Sublir" />
+            <form method="post" enctype="multipart/form-data" >
+                <input name="pasoFoto" id="flagFoto" hidden="true"/>
+                <input id="upfile" class="file" type="file" name="upfile" size="50" accept="image/*"/>
+                <input class="button subirImg" type="submit" value="Sublir" onclick="subirImg('upfile')"/>
             </form>
         </div>
         <div class="rcorners2">
             <h1 class="title font">Registro de Personal</h1>
         </div>
     </body>
-
 </html>
