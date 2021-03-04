@@ -74,6 +74,7 @@ public class Registro extends HttpServlet {
                 break;
             case "1":
                 user = new User();
+                request.setAttribute("User", user);
                 mantener(request,response);
                 break;
             default:

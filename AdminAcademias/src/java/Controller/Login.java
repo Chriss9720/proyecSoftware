@@ -28,7 +28,6 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
         String mat = toString(request.getParameter("matricula"));
         String cip = toString(request.getParameter("clave"));
         System.out.println(mat);
