@@ -1,4 +1,5 @@
 var extraH = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 function realizarValidaciones(mat, nombre, app, apm, correo, cip) {
     if (mat.length > 0)
         validarMatricula(mat, 'errorMatricula', 'labelErrorerrorMatricula', 0);
@@ -14,6 +15,7 @@ function realizarValidaciones(mat, nombre, app, apm, correo, cip) {
         validarCIP(cip, 'errorCIP', 'labelErrorIP');
     ajustarTamaño('contenedor');
 }
+
 function contieneNumeros(palabra, id, label, pos) {
     var bol = false;
     var carac = false;
@@ -21,10 +23,10 @@ function contieneNumeros(palabra, id, label, pos) {
         bol = ((palabra.charAt(i) >= '0' && palabra.charAt(i) <= '9'));
     }
     for (var i = 0; i < palabra.length && !carac; i++) {
-        if (palabra.charAt(i) !== ' ' && palabra.charAt(i) !== 'ñ'
-                && palabra.charAt(i) !== 'Ñ') {
-            carac = ((palabra.charAt(i) < 'A' || palabra.charAt(i) > 'Z'))
-                    && ((palabra.charAt(i) < 'a' || palabra.charAt(i) > 'z'));
+        if (palabra.charAt(i) !== ' ' && palabra.charAt(i) !== 'ñ' &&
+            palabra.charAt(i) !== 'Ñ') {
+            carac = ((palabra.charAt(i) < 'A' || palabra.charAt(i) > 'Z')) &&
+                ((palabra.charAt(i) < 'a' || palabra.charAt(i) > 'z'));
         }
     }
     document.getElementById(id).hidden = !bol && !carac;
@@ -36,6 +38,7 @@ function contieneNumeros(palabra, id, label, pos) {
     }
     ajustarTamaño('contenedor');
 }
+
 function visible() {
     var x = document.getElementById("psw");
     if (x.type === "password") {
@@ -44,6 +47,7 @@ function visible() {
         x.type = "password";
     }
 }
+
 function validarCorreo(correo, id, label) {
     var ext = "@e-itesca.edu.mx";
     var start = correo.length - ext.length;
@@ -57,6 +61,7 @@ function validarCorreo(correo, id, label) {
     }
     ajustarTamaño('contenedor');
 }
+
 function validarCIP(cip, id, label) {
     document.getElementById(id).hidden = !(cip.length !== 5);
     document.getElementById(label).innerHTML = "Minímo 5";
@@ -67,6 +72,7 @@ function validarCIP(cip, id, label) {
     }
     ajustarTamaño('contenedor');
 }
+
 function validarSelect(select, id, label, pos) {
     document.getElementById(id).hidden = !(select === "0");
     document.getElementById(label).innerHTML = "Elija 1";
@@ -77,6 +83,7 @@ function validarSelect(select, id, label, pos) {
     }
     ajustarTamaño('contenedor');
 }
+
 function ajustarTamaño(id) {
     var aumento = 0;
     for (var i = 0; i < extraH.length; i++) {
@@ -84,6 +91,7 @@ function ajustarTamaño(id) {
     }
     document.getElementById(id).style.height = 580 + aumento + "px";
 }
+
 function validarMatricula(palabra, id, label) {
     var bol = true;
     for (var i = 0; i < palabra.length && bol; i++) {
@@ -106,6 +114,7 @@ function validarMatricula(palabra, id, label) {
         extraH[9] = 0;
     }
 }
+
 function mensajeErrorLogin(mensaje) {
     if (mensaje !== "null") {
         document.getElementById("errores").hidden = false;
@@ -115,28 +124,32 @@ function mensajeErrorLogin(mensaje) {
         document.getElementById("labelerrores").innerHTML = "";
     }
 }
+
 function cambiar(page) {
     location.href = page;
 }
+
 function cancelarRegistro() {
     if (confirm("Seguro que desae cancelar el registro?")) {
         location.href = "Registro";
     }
 }
+
 function error() {
     alert("No se encontro ningun resultado");
     location.href = "Eliminar";
 }
+
 function validarRegistro() {
     if (!document.getElementById("errorMatricula").hidden ||
-            !document.getElementById("errorNombre").hidden ||
-            !document.getElementById("errorApellidoP").hidden ||
-            !document.getElementById("errorApellidoM").hidden ||
-            !document.getElementById("errorCorreo").hidden ||
-            !document.getElementById("errorCIP").hidden ||
-            !document.getElementById("errorSelectCarrera").hidden ||
-            !document.getElementById("errorSelectAcademia").hidden ||
-            !document.getElementById("errorSelectPuesto").hidden) {
+        !document.getElementById("errorNombre").hidden ||
+        !document.getElementById("errorApellidoP").hidden ||
+        !document.getElementById("errorApellidoM").hidden ||
+        !document.getElementById("errorCorreo").hidden ||
+        !document.getElementById("errorCIP").hidden ||
+        !document.getElementById("errorSelectCarrera").hidden ||
+        !document.getElementById("errorSelectAcademia").hidden ||
+        !document.getElementById("errorSelectPuesto").hidden) {
         document.getElementById("flag").value = "0";
         alert("revise los campos");
     } else {
@@ -168,6 +181,7 @@ function validarRegistro() {
         }
     }
 }
+
 function eliminar(valor) {
     valor = valor.replace("Eliminar - ", "");
     if (confirm("Seguro que desea elimiar al usaurio con la matricula: " + valor)) {
@@ -182,18 +196,22 @@ function eliminar(valor) {
         alert("Cancelacion exitosa!!!");
     }
 }
+
 function verPDF(nombre) {
     window.open("PDF.jsp?nombre=" + nombre);
 }
+
 function cerrarSesion(error) {
     if (error.length > 0)
         alert(error);
 }
+
 function logout(path) {
     if (confirm("Seguro de que desea cerrar su sesión?")) {
         location.href = path;
     }
 }
+
 function subirImg(path) {
     path = document.getElementById(path).value;
     if (path.length === 0) {
@@ -204,8 +222,8 @@ function subirImg(path) {
         crearLoad();
     }
 }
+
 function crearLoad() {
-    console.log("a ver");
     var div = document.createElement("DIV");
     div.setAttribute("class", "loading show rcorners1");
     var s = document.createElement("DIV");

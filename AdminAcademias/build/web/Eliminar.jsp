@@ -29,7 +29,6 @@
                 usuarios.add(new Object[]{"18130145", "Hector Castro", "ISC", "Ingenieria en sistemas", "Hector.png"});
                 usuarios.add(new Object[]{"18130159", "Yañez Christian", "ISC", "Ingenieria en sistemas", "imagen.png"});
                 usuarios.add(new Object[]{"18130405", "Sergio Guerra", "ISC", "Ingenieria en sistemas", "perfilazul.png"});
-                usuarios.add(new Object[]{"18130122", "Llamas Cielo", "ISC", "Ingenieria en sistemas", "cielo.png"});
                 academias.add("Ingenieria en sistemas");
                 academias.add("Mecanica");
             }

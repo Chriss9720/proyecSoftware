@@ -30,7 +30,6 @@ public class Login extends HttpServlet {
         processRequest(request, response);
         String mat = toString(request.getParameter("matricula"));
         String cip = toString(request.getParameter("clave"));
-        System.out.println(mat);
         Object[] results = GestorBD.inicarSesion(mat, cip);
         if (results[0] instanceof Integer) {
             switch (toInt(results[0])) {

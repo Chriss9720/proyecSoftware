@@ -81,7 +81,8 @@
                         <form class="font" action="Recientes" method="post">
                             <table cellspacing="3" cellpadding="3">
                                 <tr>
-                                    <%                                        for (int i = 0; i < 10; i++) {
+                                    <%                                        
+                                        for (int i = 0; i < 10; i++) {
                                     %>
                                     <td onclick="verPDF('<%=i%>')">
                                         <table cellspacing="3" cellpadding="3" class="tablaRecientes2">
