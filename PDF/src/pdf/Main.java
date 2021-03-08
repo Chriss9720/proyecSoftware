@@ -20,7 +20,7 @@ import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 /**
- *
+ *eduita
  * @author Chriss Yañez
  */
 public class Main {
