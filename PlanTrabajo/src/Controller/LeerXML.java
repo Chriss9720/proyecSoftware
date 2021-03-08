@@ -58,6 +58,7 @@ public class LeerXML {
                 acts.getLast().setAsignaturas(elemento.getElementsByTagName("Asginatura").item(0).getTextContent());
                 acts.getLast().setFecha(elemento.getElementsByTagName("Fecha").item(0).getTextContent());
                 acts.getLast().setEvidencia(elemento.getElementsByTagName("Evidencia").item(0).getTextContent());
+                acts.getLast().setResponsable(elemento.getElementsByTagName("Responsable").item(0).getTextContent());
             }
             acta[0] = enc;
             acta[1] = acts;
