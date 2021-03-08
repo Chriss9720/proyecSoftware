@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<acta>
+    <Encabezado>
+        <noActa>3</noActa>
+        <titulo>ACTA DE JUNTA DE ACADEMIA</titulo>
+        <version>F01PSA01.02</version>
+    </Encabezado>
+    <Cuerpo>
+        <horaInicio>5:00</horaInicio>
+        <dia>25</dia>
+        <mes>Febrero</mes>
+        <year>2021</year>
+        <academia>ISC - Ingeneria en sistemas</academia>
+        <presidente>Hiram</presidente>
+        <secretaria>Sergio</secretaria>
+        <orden>Todo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de lineaTodo lo que se vio va aquí y mucho mas texto, del necesario para comprobar el justificado y el salto de linea automatico en un area especifica. Calando el ajuste automatico del cuadro, 
+falta mas texto para el salto de linea</orden>
+        <horaFinal>20:00</horaFinal>
+        <lugar>Area de sitemas</lugar>
+    </Cuerpo>
+    <Acuerdo>
+        <Acuerdos>
+            <nombre>Nombre1</nombre>
+            <responsables>
+                <responsable>1</responsable>
+                <responsable>2</responsable>
+                <responsable>3</responsable>
+            </responsables>
+            <fechaLimite>mañana</fechaLimite>
+            <porcentaje>0%</porcentaje>
+        </Acuerdos>
+        <Acuerdos>
+            <nombre>Nombre2</nombre>
+            <responsables>
+                <responsable>1</responsable>
+                <responsable>2</responsable>
+                <responsable>3</responsable>
+            </responsables>
+            <fechaLimite>viernes</fechaLimite>
+            <porcentaje>10%</porcentaje>
+        </Acuerdos>
+    </Acuerdo>
+</acta>
