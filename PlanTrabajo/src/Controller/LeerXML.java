@@ -21,11 +21,11 @@ import org.xml.sax.SAXException;
  */
 public class LeerXML {
 
-    private Object[] acta = null;
+    private Object[] Plan = null;
 
     private void LeerXML(String path) {
         try {
-            acta = new Object[]{null, null};
+            Plan = new Object[]{null, null};
             File file = new File(path);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
@@ -60,8 +60,8 @@ public class LeerXML {
                 acts.getLast().setEvidencia(elemento.getElementsByTagName("Evidencia").item(0).getTextContent());
                 acts.getLast().setResponsable(elemento.getElementsByTagName("Responsable").item(0).getTextContent());
             }
-            acta[0] = enc;
-            acta[1] = acts;
+            Plan[0] = enc;
+            Plan[1] = acts;
         } catch (IOException | ParserConfigurationException | DOMException | SAXException e) {
             System.out.println(e);
         }
@@ -69,7 +69,7 @@ public class LeerXML {
 
     public Object[] getActa(String path) {
         LeerXML(path);
-        return acta;
+        return Plan;
     }
 
 }

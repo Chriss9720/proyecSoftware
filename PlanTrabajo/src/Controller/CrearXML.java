@@ -56,9 +56,10 @@ public class CrearXML {
                     "asignaturas: " + (i + 1), "Responsable: " + (i + 1),
                     "Fecha: " + (i + 1), "Evidencia: " + (i + 1)));
         }
-
         key.add("Actividades");
         value.add(acts);
+        
+        
 
         generar(key, value);
     }
@@ -101,8 +102,9 @@ public class CrearXML {
                     itemNode.appendChild(getNode(document, subitemNode, "Fecha", act.getFecha()));
                     itemNode.appendChild(getNode(document, subitemNode, "Evidencia", act.getEvidencia()));
                 }
-                
                 raiz.appendChild(itemNode);
+                
+                
                 
                 Source source = new DOMSource(document);
                 Result result = new StreamResult(new java.io.File("src/Documentos/" + nombre));
@@ -121,12 +123,4 @@ public class CrearXML {
         itemNode.appendChild(keyNode);
         return itemNode;
     }
-
-    private void getNodeNr(Document document, Element itemNode, String title, String value) {
-        Element keyNode = document.createElement(title);
-        Text nodeKeyValue = document.createTextNode(value);
-        keyNode.appendChild(nodeKeyValue);
-        itemNode.appendChild(keyNode);
-    }
-
 }
