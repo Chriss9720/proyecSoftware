@@ -16,6 +16,7 @@ public class Main {
         Object[] obj = new LeerXML().getActa("src/Documentos/document.xml");
         try {
             Cuerpo cue = (Cuerpo) obj[0];
+            
             XWPFDocument doc = new XWPFDocument(OPCPackage.open("D:\\6To\\Ing de Software\\proyecto\\codigo\\ActaAcademias\\src\\Documentos\\F01PSA01.02.docx"));
             //para parrafos
             doc.getParagraphs().stream().map(p -> p.getRuns()).filter(runs
@@ -43,9 +44,29 @@ public class Main {
                             text = text.replace("${se}", cue.getSecretario());
                         } else if (text.contains("${fH}")) {
                             text = text.replace("${fH}", cue.getHoraFinal());
+                        } else {
+                            text = text.replace("${edito}", "editado");
                         }
                         r.setText(text, 0);
                     }
+                });
+            });
+            //Para tablas
+            doc.getTables().forEach(tbl -> {
+                tbl.getRows().forEach(row -> {
+                    row.getTableCells().forEach(cell -> {
+                        cell.getParagraphs().forEach(p -> {
+                            p.getRuns().forEach(r -> {
+                                String txt = r.getText(0);
+                                if (txt != null) {
+                                    if (txt.contains("${orden}")) {
+                                        txt = txt.replace("${orden}", cue.getOrden());
+                                    }
+                                    r.setText(txt, 0);
+                                }
+                            });
+                        });
+                    });
                 });
             });
             doc.write(new FileOutputStream("D:\\6To\\Ing de Software\\proyecto\\codigo\\ActaAcademias\\src\\Documentos\\F01PSA01.XX.docx"));
