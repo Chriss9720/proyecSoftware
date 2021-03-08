@@ -155,7 +155,7 @@ public class Main {
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
-            document.save("D:\\Codigos\\Java\\PDF\\src\\Documentos\\document.pdf");
+            document.save("D:\\6To\\Ing de Software\\proyecto\\codigo\\PDF\\src\\Documentos\\document.pdf");
             document.close();
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
