@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PlanTrabajo>
+	<Encabezado>
+		<Nombre>ISC</Nombre>
+		<Semestre>Ene-Jun 2021</Semestre>
+		<Presidente>Hiram</Presidente>
+		<Jefe>Anabel</Jefe>
+		<Coordinador>Anabel</Coordinador>
+		<Reuniones>
+			<Reunion>01/01/21</Reunion>
+			<Reunion>02/02/21</Reunion>
+			<Reunion>03/03/21</Reunion>
+			<Reunion>04/04/21</Reunion>
+		</Reuniones>
+	</Encabezado>
+	<Actividades>
+		<Actividad>
+			<Accion>acction: 1</Accion>
+			<Asginatura>asignaturas: 1</Asginatura>
+			<Responsable>Responsable: 1</Responsable>
+			<Fecha>Fecha: 1</Fecha>
+			<Evidencia>Evidencia: 1</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 2</Accion>
+			<Asginatura>asignaturas: 2</Asginatura>
+			<Responsable>Responsable: 2</Responsable>
+			<Fecha>Fecha: 2</Fecha>
+			<Evidencia>Evidencia: 2</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 3</Accion>
+			<Asginatura>asignaturas: 3</Asginatura>
+			<Responsable>Responsable: 3</Responsable>
+			<Fecha>Fecha: 3</Fecha>
+			<Evidencia>Evidencia: 3</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 4</Accion>
+			<Asginatura>asignaturas: 4</Asginatura>
+			<Responsable>Responsable: 4</Responsable>
+			<Fecha>Fecha: 4</Fecha>
+			<Evidencia>Evidencia: 4</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 5</Accion>
+			<Asginatura>asignaturas: 5</Asginatura>
+			<Responsable>Responsable: 5</Responsable>
+			<Fecha>Fecha: 5</Fecha>
+			<Evidencia>Evidencia: 5</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 6</Accion>
+			<Asginatura>asignaturas: 6</Asginatura>
+			<Responsable>Responsable: 6</Responsable>
+			<Fecha>Fecha: 6</Fecha>
+			<Evidencia>Evidencia: 6</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 7</Accion>
+			<Asginatura>asignaturas: 7</Asginatura>
+			<Responsable>Responsable: 7</Responsable>
+			<Fecha>Fecha: 7</Fecha>
+			<Evidencia>Evidencia: 7</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 8</Accion>
+			<Asginatura>asignaturas: 8</Asginatura>
+			<Responsable>Responsable: 8</Responsable>
+			<Fecha>Fecha: 8</Fecha>
+			<Evidencia>Evidencia: 8</Evidencia>
+		</Actividad>
+		<Actividad>
+			<Accion>acction: 9</Accion>
+			<Asginatura>asignaturas: 9</Asginatura>
+			<Responsable>Responsable: 9</Responsable>
+			<Fecha>Fecha: 9</Fecha>
+			<Evidencia>Evidencia: 9</Evidencia>
+		</Actividad>
+	</Actividades>
+</PlanTrabajo>
