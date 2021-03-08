@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><acta>
-    <Cuerpo>
-        <num>XXXX</num>
-        <horaInicio>5:00</horaInicio>
-        <dia>08</dia>
-        <mes>03</mes>
-        <year>21</year>
-        <academia>ISC</academia>
-        <presidente>Anabel</presidente>
-        <secretaria>Sergio</secretaria>
-        <orden>Todo lo que se vio va aqui</orden>
-        <horaFinal>22</horaFinal>
-        <lugar>Casa</lugar>
-    </Cuerpo>
-</acta>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><acta><Cuerpo><num>25</num><horaInicio>5:00</horaInicio><dia>08</dia><mes>03</mes><year>21</year><academia>ISC</academia><presidente>Anabel</presidente><secretaria>Sergio</secretaria><orden>Todo lo que se vio va aqui</orden><horaFinal>22</horaFinal><lugar>Casa</lugar></Cuerpo><AcuerdosAnterioes><AcuerdoAnt><NombreAnt>Acuerdo: 1</NombreAnt><Responsable>Responsable:1</Responsable><Fecha>Fecha: 1</Fecha><Avance>Avance: 1</Avance></AcuerdoAnt><AcuerdoAnt><NombreAnt>Acuerdo: 2</NombreAnt><Responsable>Responsable:2</Responsable><Fecha>Fecha: 2</Fecha><Avance>Avance: 2</Avance></AcuerdoAnt><AcuerdoAnt><NombreAnt>Acuerdo: 3</NombreAnt><Responsable>Responsable:3</Responsable><Fecha>Fecha: 3</Fecha><Avance>Avance: 3</Avance></AcuerdoAnt><AcuerdoAnt><NombreAnt>Acuerdo: 4</NombreAnt><Responsable>Responsable:4</Responsable><Fecha>Fecha: 4</Fecha><Avance>Avance: 4</Avance></AcuerdoAnt><AcuerdoAnt><NombreAnt>Acuerdo: 5</NombreAnt><Responsable>Responsable:5</Responsable><Fecha>Fecha: 5</Fecha><Avance>Avance: 5</Avance></AcuerdoAnt><AcuerdoAnt><NombreAnt>Acuerdo: 6</NombreAnt><Responsable>Responsable:6</Responsable><Fecha>Fecha: 6</Fecha><Avance>Avance: 6</Avance></AcuerdoAnt></AcuerdosAnterioes><Acuerdos><Acuerdo><Nombre>Acuerdo: 1</Nombre><Responsable>Acuerdo: 1</Responsable><Fecha>Acuerdo: 1</Fecha></Acuerdo><Acuerdo><Nombre>Acuerdo: 2</Nombre><Responsable>Acuerdo: 2</Responsable><Fecha>Acuerdo: 2</Fecha></Acuerdo><Acuerdo><Nombre>Acuerdo: 3</Nombre><Responsable>Acuerdo: 3</Responsable><Fecha>Acuerdo: 3</Fecha></Acuerdo><Acuerdo><Nombre>Acuerdo: 4</Nombre><Responsable>Acuerdo: 4</Responsable><Fecha>Acuerdo: 4</Fecha></Acuerdo><Acuerdo><Nombre>Acuerdo: 5</Nombre><Responsable>Acuerdo: 5</Responsable><Fecha>Acuerdo: 5</Fecha></Acuerdo><Acuerdo><Nombre>Acuerdo: 6</Nombre><Responsable>Acuerdo: 6</Responsable><Fecha>Acuerdo: 6</Fecha></Acuerdo><Acuerdo><Nombre>Acuerdo: 7</Nombre><Responsable>Acuerdo: 7</Responsable><Fecha>Acuerdo: 7</Fecha></Acuerdo><Acuerdo><Nombre>Acuerdo: 8</Nombre><Responsable>Acuerdo: 8</Responsable><Fecha>Acuerdo: 8</Fecha></Acuerdo></Acuerdos></acta>

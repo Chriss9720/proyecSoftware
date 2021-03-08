@@ -1,5 +1,7 @@
 package Doc;
 
+import Model.Acuerdo;
+import Model.AcuerdosAnterioes;
 import Model.Cuerpo;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -38,8 +40,26 @@ public class CrearXML {
         ArrayList value = new ArrayList();
 
         key.add("Cuerpo");
-        value.add(new Cuerpo("XXXX", "5:00", "08", "03", "21", "Casa",
+        value.add(new Cuerpo("25", "5:00", "08", "03", "21", "Casa",
                 "ISC", "Anabel", "Sergio", "Todo lo que se vio va aqui", "22"));
+
+        key.add("AcuerdosAnterioes");
+        LinkedList<AcuerdosAnterioes> acueAnt = new LinkedList();
+        for (int i = 0; i < 6; i++) {
+            acueAnt.add(new AcuerdosAnterioes("Acuerdo: " + (i + 1),
+                    "Responsable:" + (i + 1), "Fecha: " + (i + 1),
+                    "Avance: " + (i + 1)));
+        }
+        value.add(acueAnt);
+
+        key.add("Acuerdos");
+        LinkedList<Acuerdo> acu = new LinkedList();
+        for (int i = 0; i < 8; i++) {
+            acu.add(new Acuerdo("Acuerdo: " + (i + 1), 
+                    "Responsable: " + (i + 1), "Fecha:" + (i + 1)));
+        }
+        value.add(acu);
+
         generar(key, value);
     }
 
@@ -70,6 +90,27 @@ public class CrearXML {
                 raiz.appendChild(getNode(document, itemNode, "horaFinal", cuerpo.getHoraFinal()));
                 raiz.appendChild(getNode(document, itemNode, "lugar", cuerpo.getLugar()));
 
+                itemNode = document.createElement(key.get(1));
+                LinkedList<AcuerdosAnterioes> acueAnt = (LinkedList<AcuerdosAnterioes>) value.get(1);
+                for (AcuerdosAnterioes acu : acueAnt) {
+                    Element subitemNode = document.createElement("AcuerdoAnt");
+                    itemNode.appendChild(getNode(document, subitemNode, "NombreAnt", acu.getAcuerdo()));
+                    itemNode.appendChild(getNode(document, subitemNode, "Responsable", acu.getResponsable()));
+                    itemNode.appendChild(getNode(document, subitemNode, "Fecha", acu.getFecha()));
+                    itemNode.appendChild(getNode(document, subitemNode, "Avance", acu.getAvance()));
+                }
+                raiz.appendChild(itemNode);
+                
+                itemNode = document.createElement(key.get(2));
+                LinkedList<Acuerdo> acu = (LinkedList<Acuerdo>) value.get(2);
+                for (Acuerdo acuerdo : acu) {
+                    Element subitemNode = document.createElement("Acuerdo");
+                    itemNode.appendChild(getNode(document, subitemNode, "Nombre", acuerdo.getAcuerdo()));
+                    itemNode.appendChild(getNode(document, subitemNode, "Responsable", acuerdo.getAcuerdo()));
+                    itemNode.appendChild(getNode(document, subitemNode, "Fecha", acuerdo.getAcuerdo()));
+                }
+                raiz.appendChild(itemNode);
+
                 Source source = new DOMSource(document);
                 Result result = new StreamResult(new java.io.File("src/Documentos/" + nombre));
                 Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -86,13 +127,6 @@ public class CrearXML {
         keyNode.appendChild(nodeKeyValue);
         itemNode.appendChild(keyNode);
         return itemNode;
-    }
-
-    private void getNodeNr(Document document, Element itemNode, String title, String value) {
-        Element keyNode = document.createElement(title);
-        Text nodeKeyValue = document.createTextNode(value);
-        keyNode.appendChild(nodeKeyValue);
-        itemNode.appendChild(keyNode);
     }
 
 }
