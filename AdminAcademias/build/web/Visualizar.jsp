@@ -17,9 +17,10 @@
     </head>
     <body>
         <div class="rcornersVerificar">
-            <img onclick="logout('<%= request.getContextPath() %>')" id="CerrarSesion" class="imgLogout" title="Salir" src="src/BotonSalir.png" alt="not found"/>
+            
             <form class="font" action="Verificar" method="get">
                 <div class="rcornersVerificar1">
+                    <input class="button buttonRegresar1" type="button" value="Regresar" onclick="cambiar('Menu.jsp')"/>
                     <table cellspacing="3" cellpadding="3" class="tablaVerificar1">
                         <tr>
                             <td>

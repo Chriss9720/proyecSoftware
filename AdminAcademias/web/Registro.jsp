@@ -58,7 +58,7 @@
                     '<%=app%>', '<%=apm%>', '<%=correo%>', '<%=cip%>')">
         <div class="rcorners1" id="contenedor">
             <p1 class="subtitle font">Ingrese la informaci&oacute;n:</p1>
-            <img onclick="logout('<%= request.getContextPath()%>')" id="CerrarSesion" class="imgLogout" title="Salir" src="src/BotonSalir.png" alt="not found"/>
+            <input class="button buttonRegresar2" type="button" value="Regresar" onclick="cambiar('Menu.jsp')"/>
             <form class="font" action="Registro" method="post" enctype="multipart/form-data" >
                 <input name="paso" id="flag" hidden="true"/>
                 <img id="fotoPerfil" class="imgRedonda" src="<%= path%>" alt="not found" />

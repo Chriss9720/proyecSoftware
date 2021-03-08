@@ -49,7 +49,7 @@
                     ? request.getParameter("SearchAca") : "";
         %>
         <div class="fijadoEliminar">
-            <img onclick="logout('<%= request.getContextPath() %>')" id="CerrarSesion" class="imgLogout" title="Salir" src="src/BotonSalir.png" alt="not found"/>
+            
             <form class="font" action="BuscarEliminar" method="get">
                 <table cellspacing="10" cellpadding="3" class="BusquedaEliminar">
                     <tr>
