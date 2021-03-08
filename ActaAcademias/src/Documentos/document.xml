@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><acta>
+    <Cuerpo>
+        <num>XXXX</num>
+        <horaInicio>5:00</horaInicio>
+        <dia>08</dia>
+        <mes>03</mes>
+        <year>21</year>
+        <academia>ISC</academia>
+        <presidente>Anabel</presidente>
+        <secretaria>Sergio</secretaria>
+        <orden>Todo lo que se vio va aqui</orden>
+        <horaFinal>22</horaFinal>
+        <lugar>Casa</lugar>
+    </Cuerpo>
+</acta>
